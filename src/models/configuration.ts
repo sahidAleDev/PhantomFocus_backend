@@ -7,6 +7,10 @@ const ConfigurationSchema = new Schema<Configuration>({
     required: true,
     ref: "users"
   },
+  name: {
+    type: String,
+    required: true
+  },
   workDuration: { 
     type: Number, 
     required: true 

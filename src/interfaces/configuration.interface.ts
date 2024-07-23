@@ -7,6 +7,7 @@ export interface Configuration {
   createdAt: Date;
   cyclesBeforeLongBreak: number;
   longBreakDuration: number;
+  name: string;
   userId: typeof ObjectId;
   workDuration: number;
 }

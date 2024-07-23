@@ -1,14 +1,21 @@
 import 'dotenv/config'
-import express from 'express'
-import cors from 'cors'
 import { router } from "./routes";
-const PORT = process.env.PORT || 3001
+import cookieParser from 'cookie-parser';
+import cors from 'cors'
 import db from './config/mongo'
+import express from 'express'
+
+const PORT = process.env.PORT || 3001
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+  origin: 'http://localhost:5173', // Reemplaza esto con la URL de tu frontend
+  credentials: true
+}));
+
 app.use(express.json())
+app.use(cookieParser())
 app.use(router)
 
 db().then(() => {

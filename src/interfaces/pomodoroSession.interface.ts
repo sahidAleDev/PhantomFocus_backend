@@ -6,14 +6,14 @@ export interface PomodoroSession {
   breakDuration: number;
   createdAt: Date;
   currentCycle: number;
+  cyclesBeforeLongBreak: number;
   endTime: Date;
   isActive: boolean;
   isCompleted: boolean;
-  pauseTime: Date;
-  resumeTime: Date;
+  longBreakDuration: number;
+  pauseRemainingTime: number;
   startTime: Date;
   title: string;
-  totalCycles: number;
   userId: typeof ObjectId;
   workDuration: number;
 }

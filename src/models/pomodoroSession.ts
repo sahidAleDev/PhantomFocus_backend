@@ -15,14 +15,6 @@ const PomodoroSessionSchema = new Schema<PomodoroSession>({
     type: Date, 
     required: true 
   },
-  pauseTime: { 
-    type: Date, 
-    required: true 
-  },
-  resumeTime: { 
-    type: Date, 
-    required: true 
-  },
   workDuration: { 
     type: Number, 
     required: true 
@@ -35,7 +27,15 @@ const PomodoroSessionSchema = new Schema<PomodoroSession>({
     type: Number, 
     required: true 
   },
-  totalCycles: { 
+  cyclesBeforeLongBreak: { 
+    type: Number, 
+    required: true 
+  },
+  longBreakDuration: { 
+    type: Number, 
+    required: true 
+  },
+  pauseRemainingTime: { 
     type: Number, 
     required: true 
   },

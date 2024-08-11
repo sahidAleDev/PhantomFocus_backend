@@ -11,7 +11,13 @@ const insertPomodoroSession = async (pomodoroSession: PomodoroSession) => {
   return response;
 }
 
+const updatePomodoroSession = async (id: string, pomodoroSession: PomodoroSession) => {
+  const response  = await PomodoroSessionModel.findOneAndUpdate({ _id: id }, pomodoroSession, { new: true });
+  return response;
+}
+
 export {
   getPomodoroSessions,
   insertPomodoroSession,
+  updatePomodoroSession,
 }

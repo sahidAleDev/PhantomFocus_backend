@@ -3,6 +3,7 @@ import { handleHttp } from "../utils/error.handle";
 import { 
   getPomodoroSessions,
   insertPomodoroSession, 
+  updatePomodoroSession,
 } 
 from "../services/pomodoroSession";
 
@@ -27,7 +28,18 @@ const postPomodosoSessionCtlr = async (req: Request, res: Response) => {
   }
 }
 
+const updatePomodosoSessionCtlr = async ({ params, body }: Request, res: Response) => {
+  try {
+    const { id } = params
+    const response = await updatePomodoroSession(id, body)
+    res.send(response)
+  } catch (error) {
+    handleHttp(res, "ERROR_UPDATE_POMODORO_SESSION")
+  }
+}
+
 export {
   getPomodoroSessionsCtlr,
   postPomodosoSessionCtlr,
+  updatePomodosoSessionCtlr,
 }

@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { handleHttp } from "../utils/error.handle";
 import { registerNewUser, loginUser } from "../services/user";
 
-
 const registerCtlr = async (req: Request, res: Response) => { 
   try {
     const { body } = req
